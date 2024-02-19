@@ -1,7 +1,6 @@
 package com.example.image2d.controller.api;
 
 import com.example.image2d.service.ImageService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-public class ImageContoller {
+public class ImageController {
 
     private final ImageService imageService; // 이미지 서비스
 
-    // 생성자를 통한 의존성 주입
-    public ImageContoller(ImageService imageService) {
+    public ImageController(ImageService imageService) {
         this.imageService = imageService;
     }
 
