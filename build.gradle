@@ -38,6 +38,9 @@ dependencies {
 
     implementation 'io.netty:netty-all:4.1.68.Final'
 
+    // H2
+    runtimeOnly 'com.h2database:h2'
+
 
 
 }
