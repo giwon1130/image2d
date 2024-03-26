@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Drawing</title>
+    <link rel="stylesheet" th:href="@{/css/ol.css}" type="text/css">
+    <style>
+        #map {
+            width: 100%;
+            height: 1000px;
+        }
+        .control-panel {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<!-- 모드 선택을 위한 라디오 버튼 -->
+<div>
+    <label for="userid">아이디 : </label>
+    <input type="text" id="userid">
+    <button id="duplicateCheck">중복 체크</button><br>
+    <label for="password">비밀 번호 : </label>
+    <input type="text" id="password"><br>
+    <label for="passwordCheck">비밀 번호 확인 : </label>
+    <input type="text" id="passwordCheck"><br>
+    <label for="email">이메일 : </label>
+    <input type="text" id="email"><br>
+    <label for="contactNumber">연락처 : </label>
+    <input type="text" id="contactNumber"><br>
+    <button id="accountSubmit">제출</button><br>
+</div>
+
+<script th:type="module" th:src="@{/js/joinAccount.js}"></script>
+</body>
+</html>
