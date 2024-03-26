@@ -32,6 +32,4 @@ spring:
 
 
 logging:
-  level:
-    org.springframework: DEBUG
-    org.hibernate: DEBUG
+  config: src/main/resources/log4j2.xml

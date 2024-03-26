@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MapController {
 
-
     @GetMapping("/index")
     public String showMap(Model model) {
         return "index";
     }
+
+    @GetMapping("/join")
+    public String joinAccount(Model model) {return "join";}
 }
