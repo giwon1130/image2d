@@ -2,31 +2,40 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenLayers Map</title>
-    <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" type="text/css">
+    <title>Map Drawing</title>
+    <link rel="stylesheet" th:href="@{/css/ol.css}" type="text/css">
     <style>
         #map {
             width: 100%;
-            height: 700px;
+            height: 1000px;
+        }
+        .control-panel {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 <div id="map"></div>
+<!-- 모드 선택을 위한 라디오 버튼 -->
+<div>
+    <input type="radio" id="modeNormal" name="mode" value="normal" checked>
+    <label for="modeNormal">일반 모드</label>
 
-<!-- OpenLayers JavaScript CDN -->
-<script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
+    <input type="radio" id="modeDraw" name="mode" value="draw">
+    <label for="modeDraw">선 그리기 모드</label>
+</div>
 
+<div class="control-panel">
+    <input type="file" id="imageUpload" accept="image/*">
+    <label for="imageOpacity">투명도 조절:</label>
+    <input type="range" id="imageOpacity" min="0" max="1" step="0.01" value="1">
+    <label>스케일 조절: <input type="range" id="imageScale" min="0.01" max="10" step="0.05" value="1"><span id="scaleValue">1</span>x</label>
+    <label>회전 조절: <input type="range" id="imageRotate" min="0" max="360" step="1" value="0">도</label>
+</div>
 
-<!-- JavaScript 파일 연결 -->
-<script th:src="@{/js/map.js}"></script>
+<button id="saveLine">Save Line</button>
 
-<!-- 이미지 업로드 폼 -->
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="imageFile" id="imageFile">
-    <button type="submit">이미지 업로드</button>
-</form>
+<script th:src="@{/js/openlayers/ol.js}"></script>
+<script th:type="module" th:src="@{/js/main.js}"></script>
 </body>
 </html>

@@ -28,9 +28,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+// hibernate (postgis)
+    implementation 'org.hibernate:hibernate-core:6.1.7.Final'
+    implementation 'org.hibernate:hibernate-spatial:6.1.7.Final'
+    implementation 'org.postgresql:postgresql:42.6.0'
+
+    implementation 'io.netty:netty-all:4.1.68.Final'
+
+
+
 }
 
 tasks.named('test') {
